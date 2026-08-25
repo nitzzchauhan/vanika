@@ -184,6 +184,8 @@ export function HeroSection() {
                   alt="Golden Pothos Hanging from Ceiling"
                   fill
                   priority
+                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain object-top drop-shadow-[0_20px_40px_rgba(0,0,0,0.65)] transform hover:scale-[1.03] transition-transform duration-700"
                 />
               </div>
