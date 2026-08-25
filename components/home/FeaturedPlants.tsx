@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Star, ShoppingBag, Droplets, Sun, Sparkles } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
 import toast from "react-hot-toast";
@@ -100,7 +99,7 @@ export function FeaturedPlants() {
       createdAt: new Date(),
       updatedAt: new Date(),
     });
-    toast.success(`🌿 Added ${product.name} to your cart!`, {
+    toast.success(`🌿 Added ${product.name} to cart!`, {
       style: {
         background: "#09281e",
         color: "#4ade80",
@@ -110,28 +109,28 @@ export function FeaturedPlants() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[#04160f] to-[#061e15] py-24 text-white border-t border-emerald-500/10">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-[#4ade80] mb-3">
-            <Sparkles className="w-3.5 h-3.5" /> Handpicked Favorites
+    <section className="bg-gradient-to-b from-[#04160f] to-[#061e15] py-16 text-white border-t border-emerald-500/10">
+      <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+        <div className="text-center max-w-xl mx-auto mb-10">
+          <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-widest text-[#4ade80] mb-1.5">
+            <Sparkles className="w-3 h-3" /> Handpicked Favorites
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight mb-2">
             Featured Plants of the Week
           </h2>
-          <p className="text-emerald-100/70 text-base font-light">
+          <p className="text-emerald-100/70 text-xs sm:text-sm font-light">
             Nurtured in our sustainable greenhouse and shipped securely to thrive in your space.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {products.map((product) => (
             <div
               key={product.id}
-              className="group relative rounded-3xl bg-[#092b20]/90 border border-emerald-500/20 hover:border-emerald-400/50 p-4 transition-all duration-300 hover:shadow-[0_15px_35px_rgba(0,0,0,0.35)] flex flex-col justify-between"
+              className="group relative rounded-2xl bg-[#08261c]/90 border border-emerald-500/20 hover:border-emerald-400/50 p-3.5 transition-all duration-300 hover:shadow-[0_10px_25px_rgba(0,0,0,0.3)] flex flex-col justify-between"
             >
               {/* Product Image Container */}
-              <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#051c14] mb-4 border border-emerald-500/15">
+              <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-[#051c14] mb-3 border border-emerald-500/15">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -140,59 +139,59 @@ export function FeaturedPlants() {
                 />
 
                 {/* Badge */}
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-[#0a2f23]/90 text-[#4ade80] border border-emerald-500/30 backdrop-blur-md">
+                <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#0a2f23]/90 text-[#4ade80] border border-emerald-500/30 backdrop-blur-md">
                   {product.badge}
                 </span>
 
                 {/* Rating */}
-                <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-xl bg-black/60 backdrop-blur-md text-[11px] flex items-center gap-1">
-                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                <div className="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded-lg bg-black/60 backdrop-blur-md text-[10px] flex items-center gap-1">
+                  <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
                   <span className="font-bold">{product.rating}</span>
                   <span className="text-emerald-400/60">({product.reviews})</span>
                 </div>
               </div>
 
               {/* Product Info */}
-              <div className="space-y-2 flex-1 flex flex-col justify-between">
+              <div className="space-y-1.5 flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-medium text-emerald-400/80 uppercase tracking-wider">
+                  <span className="text-[10px] font-medium text-emerald-400/80 uppercase tracking-wider">
                     {product.category}
                   </span>
-                  <h3 className="font-bold text-lg text-white group-hover:text-[#4ade80] transition-colors leading-snug">
+                  <h3 className="font-bold text-sm sm:text-base text-white group-hover:text-[#4ade80] transition-colors leading-tight">
                     {product.name}
                   </h3>
-                  <p className="text-xs italic text-emerald-300/50">{product.scientificName}</p>
+                  <p className="text-[11px] italic text-emerald-300/50">{product.scientificName}</p>
                 </div>
 
                 {/* Quick Care Tags */}
-                <div className="flex items-center gap-3 py-2 text-xs text-emerald-200/70 border-y border-emerald-500/15">
+                <div className="flex items-center gap-3 py-1.5 text-[11px] text-emerald-200/70 border-y border-emerald-500/15">
                   <div className="flex items-center gap-1">
-                    <Sun className="w-3.5 h-3.5 text-amber-400" />
-                    <span className="text-[11px]">{product.light}</span>
+                    <Sun className="w-3 h-3 text-amber-400" />
+                    <span>{product.light}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Droplets className="w-3.5 h-3.5 text-cyan-400" />
-                    <span className="text-[11px]">{product.water}</span>
+                    <Droplets className="w-3 h-3 text-cyan-400" />
+                    <span>{product.water}</span>
                   </div>
                 </div>
 
                 {/* Price & Add to Cart */}
-                <div className="flex items-center justify-between pt-2">
+                <div className="flex items-center justify-between pt-1.5">
                   <div>
-                    <div className="text-lg font-bold text-[#4ade80]">
+                    <div className="text-base font-bold text-[#4ade80]">
                       ${product.price.toFixed(2)}
                     </div>
-                    <div className="text-xs text-emerald-400/50 line-through">
+                    <div className="text-[10.5px] text-emerald-400/50 line-through">
                       ${product.comparePrice.toFixed(2)}
                     </div>
                   </div>
 
                   <button
                     onClick={() => handleQuickAdd(product)}
-                    className="p-3 rounded-2xl bg-[#4ade80] hover:bg-[#34d399] text-[#062419] font-bold transition-all shadow-md active:scale-90"
+                    className="p-2.5 rounded-xl bg-[#4ade80] hover:bg-[#34d399] text-[#062419] font-bold transition-all shadow-sm active:scale-90"
                     aria-label={`Add ${product.name} to cart`}
                   >
-                    <ShoppingBag className="w-4 h-4" />
+                    <ShoppingBag className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>

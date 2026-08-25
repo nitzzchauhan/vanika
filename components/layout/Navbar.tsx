@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Search, Heart, ShoppingCart, User, Menu, X, Leaf } from "lucide-react";
+import { Search, Heart, ShoppingCart, User, Menu, X } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
 import { useWishlistStore } from "@/store/wishlistStore";
 
@@ -23,20 +23,20 @@ export function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#051c14]/95 backdrop-blur-md border-b border-emerald-900/30 text-white">
-      <div className="container mx-auto px-4 lg:px-10">
-        <div className="flex h-20 items-center justify-between">
+    <header className="absolute top-0 left-0 right-0 z-50 w-full bg-transparent border-none text-white">
+      <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo & Tagline */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-2.5 group">
             {/* Custom Styled Leaf Icon */}
             <div className="text-[#86efac] group-hover:scale-105 transition-transform duration-300">
               <svg
-                width="34"
-                height="34"
+                width="28"
+                height="28"
                 viewBox="0 0 34 34"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="drop-shadow-[0_0_8px_rgba(134,239,172,0.3)]"
+                className="drop-shadow-[0_0_8px_rgba(134,239,172,0.25)]"
               >
                 <path
                   d="M17 3C17 3 29 5 30 18C31 28 21 31 17 31C13 31 3 28 4 18C5 5 17 3 17 3Z"
@@ -93,22 +93,22 @@ export function Navbar() {
             </div>
 
             <div className="flex flex-col">
-              <span className="font-serif text-2xl font-normal tracking-[0.18em] text-white leading-none uppercase">
+              <span className="font-serif text-xl font-normal tracking-[0.16em] text-white leading-none uppercase">
                 VANIKA
               </span>
-              <span className="text-[11px] font-sans text-emerald-100/70 tracking-wide mt-1 font-light">
+              <span className="text-[9.5px] font-sans text-emerald-100/60 tracking-wide mt-0.5 font-light">
                 Bring Nature Home
               </span>
             </div>
           </Link>
 
           {/* Center Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8 lg:gap-10">
+          <nav className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href as any}
-                className="text-sm font-normal text-emerald-100/85 hover:text-white transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#4ade80] hover:after:w-full after:transition-all after:duration-300"
+                className="text-xs font-normal text-emerald-100/80 hover:text-white transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#4ade80] hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.label}
               </Link>
@@ -116,23 +116,23 @@ export function Navbar() {
           </nav>
 
           {/* Right Action Icons: Search, Wishlist, Cart, Profile */}
-          <div className="flex items-center gap-4 sm:gap-6">
+          <div className="flex items-center gap-4">
             {/* Search */}
             <div className="relative">
               {searchOpen ? (
-                <div className="flex items-center bg-[#0a2f22] border border-emerald-500/40 rounded-full px-3 py-1.5 shadow-lg">
-                  <Search className="w-4 h-4 text-emerald-400 mr-2" />
+                <div className="flex items-center bg-[#09261b]/90 border border-emerald-500/30 rounded-full px-2.5 py-1 backdrop-blur-md shadow-lg">
+                  <Search className="w-3.5 h-3.5 text-emerald-400 mr-1.5" />
                   <input
                     type="text"
                     placeholder="Search plants..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     autoFocus
-                    className="bg-transparent text-xs text-white placeholder:text-emerald-300/40 focus:outline-none w-32 sm:w-44"
+                    className="bg-transparent text-[11px] text-white placeholder:text-emerald-300/40 focus:outline-none w-28 sm:w-36"
                   />
                   <button
                     onClick={() => setSearchOpen(false)}
-                    className="text-emerald-400 hover:text-white text-xs ml-1"
+                    className="text-emerald-400 hover:text-white text-[11px] ml-1"
                   >
                     ✕
                   </button>
@@ -141,9 +141,9 @@ export function Navbar() {
                 <button
                   onClick={() => setSearchOpen(true)}
                   aria-label="Search"
-                  className="text-emerald-100/90 hover:text-white hover:scale-110 transition-all p-1"
+                  className="text-emerald-100/85 hover:text-white hover:scale-110 transition-all p-1"
                 >
-                  <Search className="w-[19px] h-[19px]" strokeWidth={1.75} />
+                  <Search className="w-[17px] h-[17px]" strokeWidth={1.75} />
                 </button>
               )}
             </div>
@@ -152,11 +152,11 @@ export function Navbar() {
             <Link
               href={"/wishlist" as any}
               aria-label="Wishlist"
-              className="relative text-emerald-100/90 hover:text-white hover:scale-110 transition-all p-1"
+              className="relative text-emerald-100/85 hover:text-white hover:scale-110 transition-all p-1"
             >
-              <Heart className="w-[19px] h-[19px]" strokeWidth={1.75} />
+              <Heart className="w-[17px] h-[17px]" strokeWidth={1.75} />
               {wishlistCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 h-4 min-w-[16px] px-1 rounded-full bg-[#4ade80] text-[#062419] text-[10px] font-bold flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 h-3.5 min-w-[14px] px-1 rounded-full bg-[#4ade80] text-[#062419] text-[9px] font-bold flex items-center justify-center">
                   {wishlistCount}
                 </span>
               )}
@@ -166,10 +166,10 @@ export function Navbar() {
             <Link
               href={"/cart" as any}
               aria-label="Shopping Cart"
-              className="relative text-emerald-100/90 hover:text-white hover:scale-110 transition-all p-1"
+              className="relative text-emerald-100/85 hover:text-white hover:scale-110 transition-all p-1"
             >
-              <ShoppingCart className="w-[19px] h-[19px]" strokeWidth={1.75} />
-              <span className="absolute -top-1.5 -right-1.5 h-4 min-w-[16px] px-1 rounded-full bg-[#a3e635] text-[#062419] text-[10px] font-bold flex items-center justify-center shadow-sm">
+              <ShoppingCart className="w-[17px] h-[17px]" strokeWidth={1.75} />
+              <span className="absolute -top-1.5 -right-1.5 h-4 min-w-[15px] px-1 rounded-full bg-[#a3e635] text-[#062419] text-[9.5px] font-bold flex items-center justify-center shadow-sm">
                 {itemCount > 0 ? itemCount : 2}
               </span>
             </Link>
@@ -178,9 +178,9 @@ export function Navbar() {
             <Link
               href={"/login" as any}
               aria-label="Account"
-              className="text-emerald-100/90 hover:text-white hover:scale-110 transition-all p-1"
+              className="text-emerald-100/85 hover:text-white hover:scale-110 transition-all p-1"
             >
-              <User className="w-[19px] h-[19px]" strokeWidth={1.75} />
+              <User className="w-[17px] h-[17px]" strokeWidth={1.75} />
             </Link>
 
             {/* Mobile menu toggle */}
@@ -189,19 +189,19 @@ export function Navbar() {
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation Drawer */}
         {mobileOpen && (
-          <nav className="md:hidden py-4 border-t border-emerald-900/40 flex flex-col gap-3">
+          <nav className="md:hidden py-3 px-4 rounded-2xl bg-[#061d15]/95 backdrop-blur-xl border border-emerald-500/20 flex flex-col gap-2 shadow-2xl mt-2">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href as any}
-                className="text-sm font-medium text-emerald-100/90 hover:text-[#4ade80] py-2 px-3 rounded-lg hover:bg-emerald-950/40 transition-colors"
+                className="text-xs font-medium text-emerald-100/90 hover:text-[#4ade80] py-1.5 px-2 rounded-lg hover:bg-emerald-950/40 transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
