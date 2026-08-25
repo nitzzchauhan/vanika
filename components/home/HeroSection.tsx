@@ -77,16 +77,16 @@ export function HeroSection() {
       <div className="absolute bottom-[5%] left-[5%] w-[400px] h-[400px] bg-[#16a34a]/[0.05] rounded-full blur-[130px] pointer-events-none" />
 
       <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl relative z-10 flex-1 flex flex-col justify-between my-auto">
-        {/* Main Hero Content Grid — Vertically Centered */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center my-auto flex-1 py-2">
-          {/* Left Column: Vertically Centered in sync with the visual */}
-          <div className="lg:col-span-6 flex flex-col justify-center space-y-4 lg:space-y-5 z-20 my-auto">
+        {/* Main Hero Content Grid — Harmonious Left & Right Alignment */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center flex-1 pt-6 lg:pt-8 pb-4">
+          {/* Left Column: Raised & Balanced with the Hero Plant */}
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-5 lg:space-y-6 z-20 -mt-6 lg:-mt-10">
             {/* Pill Badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#08281d] border border-[#1e5843] text-[#7ee787] text-xs font-semibold uppercase tracking-wider shadow-sm self-start"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#08281d] border border-[#1e5843] text-[#7ee787] text-xs font-semibold uppercase tracking-wider shadow-sm self-start"
             >
               <Leaf className="w-3.5 h-3.5 text-[#7ee787]" />
               <span>INDOOR PLANTS</span>
@@ -97,12 +97,12 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="space-y-0.5"
+              className="space-y-1"
             >
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-[54px] font-normal text-[#f4f8f5] tracking-tight leading-[1.08]">
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-[62px] font-normal text-[#f4f8f5] tracking-tight leading-[1.06]">
                 Bring Nature
               </h1>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[54px] font-normal text-[#6ee787] tracking-tight leading-[1.08]">
+              <h2 className="font-serif text-4xl sm:text-5xl lg:text-[62px] font-normal text-[#6ee787] tracking-tight leading-[1.06]">
                 Into Your Home
               </h2>
             </motion.div>
@@ -112,7 +112,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.55 }}
-              className="text-[#a6c7b9] text-xs sm:text-sm md:text-[14.5px] leading-relaxed font-light max-w-md"
+              className="text-[#a6c7b9] text-sm sm:text-[15px] leading-relaxed font-light max-w-lg"
             >
               Discover a wide variety of indoor plants, handpicked for your space and delivered fresh to your doorstep.
             </motion.p>
@@ -122,11 +122,11 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-wrap items-center gap-3 pt-1"
+              className="flex flex-wrap items-center gap-4 pt-1"
             >
               <button
                 onClick={handleShopPlants}
-                className="group inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#7ee787] hover:bg-[#68dc72] text-[#041d13] font-semibold text-xs sm:text-sm transition-all duration-300 shadow-[0_0_24px_rgba(126,231,135,0.35)] hover:shadow-[0_0_34px_rgba(126,231,135,0.55)] hover:scale-[1.02] active:scale-[0.98]"
+                className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#7ee787] hover:bg-[#68dc72] text-[#041d13] font-semibold text-xs sm:text-sm transition-all duration-300 shadow-[0_0_24px_rgba(126,231,135,0.35)] hover:shadow-[0_0_34px_rgba(126,231,135,0.55)] hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>Shop Plants</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -134,7 +134,7 @@ export function HeroSection() {
 
               <Link
                 href={"/shop" as any}
-                className="inline-flex items-center px-6 py-3 rounded-full bg-transparent hover:bg-[#09291f] border border-[#215945] text-white hover:text-[#7ee787] font-medium text-xs sm:text-sm transition-all duration-300"
+                className="inline-flex items-center px-7 py-3.5 rounded-full bg-transparent hover:bg-[#09291f] border border-[#215945] text-white hover:text-[#7ee787] font-medium text-xs sm:text-sm transition-all duration-300"
               >
                 <span>Explore Categories</span>
               </Link>
