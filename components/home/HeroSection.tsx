@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, ArrowRight, Droplets, Sun, Sparkles, Check, Heart } from "lucide-react";
+import { ShoppingBag, ArrowRight, Droplets, Sun, Sparkles, Check, Heart, Leaf } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
 import toast from "react-hot-toast";
 
@@ -142,10 +142,10 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 0.95, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#10382b]/80 border border-emerald-500/20 text-emerald-300 text-xs font-medium backdrop-blur-md shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0d3326]/90 border border-emerald-500/30 text-[#86efac] text-xs font-semibold uppercase tracking-wider backdrop-blur-md shadow-sm"
             >
-              <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-              <span>{activePlant.category}</span>
+              <Leaf className="w-3.5 h-3.5 text-[#4ade80]" />
+              <span>INDOOR PLANTS</span>
             </motion.div>
 
             <motion.div
@@ -155,12 +155,10 @@ export function HeroSection() {
               transition={{ duration: 0.55 }}
               className="space-y-1"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-emerald-100/90 tracking-tight">
-                {activePlant.tagline}
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-white tracking-tight leading-tight">
+                Bring Nature <br />
+                <span className="font-sans font-bold text-[#86efac]">Plant Shop</span>
               </h2>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white tracking-tight leading-[1.1]">
-                Plant Shop
-              </h1>
             </motion.div>
 
             <motion.p
