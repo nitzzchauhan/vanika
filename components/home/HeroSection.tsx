@@ -142,40 +142,40 @@ export function HeroSection() {
           </div>
 
           {/* Right Column: Plant Hanging Directly from the Top Navbar / Ceiling */}
-          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[420px] lg:min-h-[500px]">
-            {/* Concentric Green Orbital Rings Centered Around the Pot */}
+          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[480px] lg:min-h-[600px]">
+            {/* Concentric Green Geometric Circles Centered Around the Pot */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              {/* Outer Orbit Ring with 3 Satellite Icon Badges */}
-              <div className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] rounded-full border border-[#1f5a45]/50 relative animate-[spin_160s_linear_infinite]">
+              {/* Outer Orbit Circle with 3 Satellite Icon Badges */}
+              <div className="w-[420px] h-[420px] sm:w-[560px] sm:h-[560px] lg:w-[620px] lg:h-[620px] rounded-full border border-[#1f5a45]/50 relative animate-[spin_180s_linear_infinite]">
                 {/* Satellite Node 1 (Top Left): Seedling Icon */}
-                <div className="absolute top-[12%] left-[4%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-lg">
-                  <Sprout className="w-4 h-4 text-[#7ee787]" />
+                <div className="absolute top-[16%] left-[6%] w-9 h-9 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.2)]">
+                  <Sprout className="w-4.5 h-4.5 text-[#7ee787]" />
                 </div>
 
                 {/* Satellite Node 2 (Top Right): Potted Plant Icon */}
-                <div className="absolute top-[16%] right-[2%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-lg">
-                  <Sprout className="w-4 h-4 text-[#7ee787]" />
+                <div className="absolute top-[20%] right-[4%] w-9 h-9 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.2)]">
+                  <Sprout className="w-4.5 h-4.5 text-[#7ee787]" />
                 </div>
 
                 {/* Satellite Node 3 (Bottom Center-Right): Botanical Leaf Twig Icon */}
-                <div className="absolute bottom-[10%] right-[32%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-lg">
-                  <Leaf className="w-4 h-4 text-[#7ee787]" />
+                <div className="absolute bottom-[16%] right-[24%] w-9 h-9 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.2)]">
+                  <Leaf className="w-4.5 h-4.5 text-[#7ee787]" />
                 </div>
               </div>
 
-              {/* Middle Concentric Ring */}
-              <div className="w-[270px] h-[270px] sm:w-[340px] sm:h-[340px] rounded-full border border-[#1f5a45]/30" />
+              {/* Middle Concentric Circle */}
+              <div className="w-[340px] h-[340px] sm:w-[460px] sm:h-[460px] lg:w-[500px] lg:h-[500px] rounded-full border border-[#1f5a45]/35" />
 
-              {/* Inner Concentric Ring */}
-              <div className="w-[210px] h-[210px] sm:w-[270px] sm:h-[270px] rounded-full border border-[#1f5a45]/20" />
+              {/* Inner Concentric Circle */}
+              <div className="w-[260px] h-[260px] sm:w-[360px] sm:h-[360px] lg:w-[390px] lg:h-[390px] rounded-full border border-[#1f5a45]/25" />
             </div>
 
-            {/* Seamless Free-Hanging Botanical Visual — Suspended Directly from Top Navbar Level */}
+            {/* Large Seamless Free-Hanging Botanical Visual — Suspended Directly from Top Navbar */}
             <motion.div
               initial={{ scale: 0.95, opacity: 0, y: -16 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative z-10 w-[290px] h-[480px] sm:w-[360px] sm:h-[580px] -mt-12 lg:-mt-20 flex items-center justify-center overflow-visible pointer-events-auto"
+              className="relative z-10 w-[340px] h-[560px] sm:w-[440px] sm:h-[700px] lg:w-[490px] lg:h-[760px] -mt-16 lg:-mt-24 flex items-center justify-center overflow-visible pointer-events-auto"
             >
               {/* Plant Image as Pure Transparent PNG with Soft Drop Shadow */}
               <div className="relative w-full h-full">
@@ -186,7 +186,7 @@ export function HeroSection() {
                   priority
                   unoptimized
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain object-top drop-shadow-[0_20px_40px_rgba(0,0,0,0.65)] transform hover:scale-[1.03] transition-transform duration-700"
+                  className="object-contain object-top drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)] transform hover:scale-[1.03] transition-transform duration-700"
                 />
               </div>
             </motion.div>
