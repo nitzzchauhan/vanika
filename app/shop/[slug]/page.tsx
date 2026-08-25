@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ProductImages } from "@/components/shop/ProductImages";
-import { ProductInfo } from "@/components/shop/ProductInfo";
-import { ProductTabs } from "@/components/shop/ProductTabs";
-import { RelatedProducts } from "@/components/shop/RelatedProducts";
+import {
+  ProductImages,
+  ProductInfo,
+  ProductTabs,
+  RelatedProducts,
+} from "@/components/shop/ProductDetail";
 
 interface ProductPageProps {
   params: { slug: string };
