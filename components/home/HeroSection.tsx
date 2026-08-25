@@ -77,16 +77,16 @@ export function HeroSection() {
       <div className="absolute bottom-[5%] left-[5%] w-[400px] h-[400px] bg-[#16a34a]/[0.05] rounded-full blur-[130px] pointer-events-none" />
 
       <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl relative z-10 flex-1 flex flex-col justify-between my-auto">
-        {/* Main Hero Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center pt-2">
-          {/* Left Column: Pill, Serif Headline, Subtitle, Action Buttons */}
-          <div className="lg:col-span-6 space-y-4 lg:space-y-5 z-20">
+        {/* Main Hero Content Grid — Vertically Centered */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center my-auto flex-1 py-2">
+          {/* Left Column: Vertically Centered in sync with the visual */}
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-4 lg:space-y-5 z-20 my-auto">
             {/* Pill Badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#08281d] border border-[#1e5843] text-[#7ee787] text-xs font-semibold uppercase tracking-wider shadow-sm"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#08281d] border border-[#1e5843] text-[#7ee787] text-xs font-semibold uppercase tracking-wider shadow-sm self-start"
             >
               <Leaf className="w-3.5 h-3.5 text-[#7ee787]" />
               <span>INDOOR PLANTS</span>
@@ -99,10 +99,10 @@ export function HeroSection() {
               transition={{ duration: 0.5 }}
               className="space-y-0.5"
             >
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-[52px] font-normal text-[#f4f8f5] tracking-tight leading-[1.08]">
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-[54px] font-normal text-[#f4f8f5] tracking-tight leading-[1.08]">
                 Bring Nature
               </h1>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[52px] font-normal text-[#6ee787] tracking-tight leading-[1.08]">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[54px] font-normal text-[#6ee787] tracking-tight leading-[1.08]">
                 Into Your Home
               </h2>
             </motion.div>
@@ -112,7 +112,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.55 }}
-              className="text-[#a6c7b9] text-xs sm:text-sm leading-relaxed font-light max-w-md"
+              className="text-[#a6c7b9] text-xs sm:text-sm md:text-[14.5px] leading-relaxed font-light max-w-md"
             >
               Discover a wide variety of indoor plants, handpicked for your space and delivered fresh to your doorstep.
             </motion.p>
@@ -142,32 +142,32 @@ export function HeroSection() {
           </div>
 
           {/* Right Column: Plant Hanging Directly from the Top Navbar / Ceiling */}
-          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[420px] lg:min-h-[520px]">
-            {/* Concentric Green Geometric Circles Centered Around the Pot */}
-            <div className="absolute top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] lg:w-[500px] lg:h-[500px] pointer-events-none flex items-center justify-center">
+          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[440px] lg:min-h-[540px]">
+            {/* Concentric Green Geometric Circles Centered Directly Behind the Planter Pot */}
+            <div className="absolute top-[37%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] lg:w-[480px] lg:h-[480px] pointer-events-none flex items-center justify-center">
               {/* Outer Orbit Circle with 3 Satellite Icon Badges */}
               <div className="w-full h-full rounded-full border border-[#1f5a45]/50 relative animate-[spin_180s_linear_infinite]">
                 {/* Satellite Node 1 (Top Left): Seedling Icon */}
-                <div className="absolute top-[14%] left-[6%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
+                <div className="absolute top-[16%] left-[6%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
                   <Sprout className="w-4 h-4 text-[#7ee787]" />
                 </div>
 
                 {/* Satellite Node 2 (Top Right): Potted Plant Icon */}
-                <div className="absolute top-[18%] right-[4%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
+                <div className="absolute top-[14%] right-[8%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
                   <Sprout className="w-4 h-4 text-[#7ee787]" />
                 </div>
 
-                {/* Satellite Node 3 (Bottom Center-Right): Botanical Leaf Twig Icon */}
-                <div className="absolute bottom-[14%] right-[22%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
+                {/* Satellite Node 3 (Bottom Left): Botanical Leaf Twig Icon */}
+                <div className="absolute bottom-[10%] left-[28%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
                   <Leaf className="w-4 h-4 text-[#7ee787]" />
                 </div>
               </div>
 
               {/* Middle Concentric Circle */}
-              <div className="absolute w-[80%] h-[80%] rounded-full border border-[#1f5a45]/35" />
+              <div className="absolute w-[78%] h-[78%] rounded-full border border-[#1f5a45]/35" />
 
               {/* Inner Concentric Circle */}
-              <div className="absolute w-[60%] h-[60%] rounded-full border border-[#1f5a45]/25" />
+              <div className="absolute w-[56%] h-[56%] rounded-full border border-[#1f5a45]/25" />
             </div>
 
             {/* Seamless Free-Hanging Botanical Visual — Suspended Directly from Top Navbar */}
