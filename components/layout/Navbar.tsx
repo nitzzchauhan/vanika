@@ -1,22 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import type { UrlObject } from "url";
 import { useState } from "react";
 import { ShoppingCart, Heart, Search, Menu, X, Leaf } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
 import { useWishlistStore } from "@/store/wishlistStore";
+
+interface NavLink {
+  href: string | UrlObject;
+  label: string;
+}
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const itemCount = useCartStore((s) => s.itemCount());
   const wishlistCount = useWishlistStore((s) => s.productIds.length);
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { href: "/shop", label: "Shop" },
-    { href: "/shop?category=indoor", label: "Indoor" },
-    { href: "/shop?category=outdoor", label: "Outdoor" },
-    { href: "/shop?category=succulent", label: "Succulents" },
-    { href: "/shop?category=rare", label: "Rare Plants" },
+    { href: { pathname: "/shop", query: { category: "indoor" } }, label: "Indoor" },
+    { href: { pathname: "/shop", query: { category: "outdoor" } }, label: "Outdoor" },
+    { href: { pathname: "/shop", query: { category: "succulent" } }, label: "Succulents" },
+    { href: { pathname: "/shop", query: { category: "rare" } }, label: "Rare Plants" },
     { href: "/care-guides", label: "Care Guides" },
   ];
 
@@ -37,7 +43,7 @@ export function Navbar() {
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
               >
@@ -52,7 +58,11 @@ export function Navbar() {
               <Search className="h-5 w-5" />
             </button>
 
-            <Link href="/wishlist" aria-label="Wishlist" className="relative p-2 rounded-full hover:bg-muted transition-colors">
+            <Link
+              href="/wishlist"
+              aria-label="Wishlist"
+              className="relative p-2 rounded-full hover:bg-muted transition-colors"
+            >
               <Heart className="h-5 w-5" />
               {wishlistCount > 0 && (
                 <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 text-white text-xs flex items-center justify-center">
@@ -61,7 +71,11 @@ export function Navbar() {
               )}
             </Link>
 
-            <Link href="/cart" aria-label="Cart" className="relative p-2 rounded-full hover:bg-muted transition-colors">
+            <Link
+              href="/cart"
+              aria-label="Cart"
+              className="relative p-2 rounded-full hover:bg-muted transition-colors"
+            >
               <ShoppingCart className="h-5 w-5" />
               {itemCount > 0 && (
                 <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center">
@@ -71,7 +85,7 @@ export function Navbar() {
             </Link>
 
             <Link
-              href="/auth/login"
+              href="/login"
               className="hidden sm:inline-flex items-center px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               Sign In
@@ -93,7 +107,7 @@ export function Navbar() {
           <nav className="lg:hidden py-4 border-t border-border flex flex-col gap-3">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors py-1"
                 onClick={() => setMobileOpen(false)}
