@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
@@ -56,8 +57,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen pb-14 md:pb-0">{children}</main>
         <Footer />
+        <MobileBottomNav />
         <Toaster position="bottom-right" />
       </body>
     </html>

@@ -71,22 +71,22 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen w-full bg-[#031811] text-white overflow-hidden flex flex-col justify-between pt-14 pb-4">
+    <section className="relative min-h-[90vh] lg:min-h-screen w-full bg-[#031811] text-white overflow-hidden flex flex-col justify-between pt-16 sm:pt-18 pb-6">
       {/* Background Soft Ambient Glows */}
-      <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] bg-[#22c55e]/[0.08] rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-[5%] left-[5%] w-[400px] h-[400px] bg-[#16a34a]/[0.05] rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-[5%] right-[10%] w-[320px] sm:w-[500px] h-[320px] sm:h-[500px] bg-[#22c55e]/[0.08] rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[5%] left-[5%] w-[260px] sm:w-[400px] h-[260px] sm:h-[400px] bg-[#16a34a]/[0.05] rounded-full blur-[90px] sm:blur-[130px] pointer-events-none" />
 
-      <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl relative z-10 flex-1 flex flex-col justify-between my-auto">
-        {/* Main Hero Content Grid — Harmonious Left & Right Alignment */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center flex-1 my-auto py-1">
-          {/* Left Column: Vertically Centered with the Hanging Botanical Visual */}
-          <div className="lg:col-span-6 flex flex-col justify-center space-y-4 lg:space-y-4.5 z-20 my-auto">
+      <div className="container mx-auto px-4 sm:px-8 lg:px-20 max-w-6xl relative z-10 flex-1 flex flex-col justify-between my-auto">
+        {/* Main Hero Content Grid — Mobile-First Stack & Desktop Side-by-Side */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center flex-1 my-auto py-2">
+          {/* Left Column: Responsive Center-to-Left Alignment */}
+          <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left space-y-4 lg:space-y-4.5 z-20 my-auto">
             {/* Pill Badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#08281d] border border-[#1e5843] text-[#7ee787] text-xs font-semibold uppercase tracking-wider shadow-sm self-start"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#08281d] border border-[#1e5843] text-[#7ee787] text-[11px] sm:text-xs font-semibold uppercase tracking-wider shadow-sm"
             >
               <Leaf className="w-3.5 h-3.5 text-[#7ee787]" />
               <span>INDOOR PLANTS</span>
@@ -99,10 +99,10 @@ export function HeroSection() {
               transition={{ duration: 0.5 }}
               className="space-y-0.5"
             >
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#f4f8f5] tracking-tight leading-[1.08]">
+              <h1 className="font-serif text-3xl sm:text-5xl lg:text-[56px] font-normal text-[#f4f8f5] tracking-tight leading-[1.08]">
                 Bring Nature
               </h1>
-              <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#6ee787] tracking-tight leading-[1.08]">
+              <h2 className="font-serif text-3xl sm:text-5xl lg:text-[56px] font-normal text-[#6ee787] tracking-tight leading-[1.08]">
                 Into Your Home
               </h2>
             </motion.div>
@@ -112,21 +112,21 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.55 }}
-              className="text-[#a6c7b9] text-xs sm:text-sm md:text-[14px] leading-relaxed font-light max-w-lg"
+              className="text-[#a6c7b9] text-xs sm:text-sm md:text-[14px] leading-relaxed font-light max-w-md lg:max-w-lg mx-auto lg:mx-0"
             >
               Discover a wide variety of indoor plants, handpicked for your space and delivered fresh to your doorstep.
             </motion.p>
 
-            {/* Action Buttons */}
+            {/* Action Buttons — Mobile Full Width / Desktop Inline */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-wrap items-center gap-3.5 pt-1"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 w-full sm:w-auto pt-1"
             >
               <button
                 onClick={handleShopPlants}
-                className="group inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#7ee787] hover:bg-[#68dc72] text-[#041d13] font-semibold text-xs sm:text-sm transition-all duration-300 shadow-[0_0_24px_rgba(126,231,135,0.35)] hover:shadow-[0_0_34px_rgba(126,231,135,0.55)] hover:scale-[1.02] active:scale-[0.98]"
+                className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#7ee787] hover:bg-[#68dc72] text-[#041d13] font-semibold text-xs sm:text-sm transition-all duration-300 shadow-[0_0_24px_rgba(126,231,135,0.35)] hover:shadow-[0_0_34px_rgba(126,231,135,0.55)] active:scale-[0.98]"
               >
                 <span>Shop Plants</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -134,7 +134,7 @@ export function HeroSection() {
 
               <Link
                 href={"/shop" as any}
-                className="inline-flex items-center px-6 py-3 rounded-full bg-transparent hover:bg-[#09291f] border border-[#215945] text-white hover:text-[#7ee787] font-medium text-xs sm:text-sm transition-all duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-transparent hover:bg-[#09291f] border border-[#215945] text-white hover:text-[#7ee787] font-medium text-xs sm:text-sm transition-all duration-300 active:scale-[0.98]"
               >
                 <span>Explore Categories</span>
               </Link>
@@ -142,24 +142,24 @@ export function HeroSection() {
           </div>
 
           {/* Right Column: Plant Hanging Directly from the Top Navbar / Ceiling */}
-          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[400px] lg:min-h-[480px]">
+          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[360px] sm:min-h-[440px] lg:min-h-[480px]">
             {/* Concentric Green Geometric Circles Centered Directly Behind the Planter Pot */}
-            <div className="absolute top-[49%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] lg:w-[470px] lg:h-[470px] pointer-events-none flex items-center justify-center">
+            <div className="absolute top-[49%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[470px] lg:h-[470px] pointer-events-none flex items-center justify-center">
               {/* Outer Orbit Circle with Static Fixed Badges */}
               <div className="w-full h-full rounded-full border border-[#1f5a45]/50 relative">
                 {/* Satellite Node 1 (Mid Left): Leaf Icon */}
-                <div className="absolute top-[46%] -left-3.5 w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
-                  <Leaf className="w-4 h-4 text-[#7ee787]" />
+                <div className="absolute top-[46%] -left-3 sm:-left-3.5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
+                  <Leaf className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#7ee787]" />
                 </div>
 
                 {/* Satellite Node 2 (Top Right): Potted Plant Icon */}
-                <div className="absolute top-[16%] right-[3%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
-                  <Sprout className="w-4 h-4 text-[#7ee787]" />
+                <div className="absolute top-[16%] right-[2%] w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
+                  <Sprout className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#7ee787]" />
                 </div>
 
                 {/* Satellite Node 3 (Bottom Right): Botanical Sprout Icon */}
-                <div className="absolute bottom-[16%] right-[3%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
-                  <Sprout className="w-4 h-4 text-[#7ee787]" />
+                <div className="absolute bottom-[16%] right-[2%] w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
+                  <Sprout className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#7ee787]" />
                 </div>
               </div>
 
@@ -175,7 +175,7 @@ export function HeroSection() {
               initial={{ scale: 0.95, opacity: 0, y: -16 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative z-10 w-[290px] h-[460px] sm:w-[360px] sm:h-[540px] lg:w-[400px] lg:h-[600px] -mt-10 lg:-mt-16 flex items-center justify-center overflow-visible pointer-events-auto"
+              className="relative z-10 w-[240px] h-[380px] sm:w-[340px] sm:h-[500px] lg:w-[400px] lg:h-[600px] -mt-6 sm:-mt-10 lg:-mt-16 flex items-center justify-center overflow-visible pointer-events-auto"
             >
               {/* Plant Image as Pure Transparent PNG with Soft Drop Shadow */}
               <div className="relative w-full h-full">
@@ -193,31 +193,31 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Bottom Feature Bar: 4 Pillars in a Unified Glass Card */}
+        {/* Bottom Feature Bar: 4 Pillars in a Responsive Mobile 2x2 Grid */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.15 }}
-          className="mt-1 sm:mt-2 rounded-2xl bg-[#06241a]/95 border border-[#1d5743] p-3 sm:p-3.5 backdrop-blur-xl shadow-xl z-20"
+          className="mt-4 sm:mt-2 rounded-2xl bg-[#06241a]/95 border border-[#1d5743] p-3 sm:p-3.5 backdrop-blur-xl shadow-xl z-20"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 divide-y md:divide-y-0 md:divide-x divide-[#1d5743]/50">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 divide-y-0 sm:divide-y md:divide-y-0 lg:divide-x divide-[#1d5743]/50">
             {features.map((feature, idx) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={feature.title}
-                  className={`flex items-center gap-3 ${
-                    idx > 0 ? "pt-2 md:pt-0 md:pl-4" : ""
+                  className={`flex items-center gap-2.5 sm:gap-3 ${
+                    idx > 0 ? "lg:pl-4" : ""
                   }`}
                 >
-                  <div className="w-8 h-8 rounded-xl bg-[#0a2f22] border border-[#2b6d55]/60 flex items-center justify-center text-[#7ee787] shrink-0 shadow-sm">
-                    <Icon className="w-4 h-4 text-[#7ee787]" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-[#0a2f22] border border-[#2b6d55]/60 flex items-center justify-center text-[#7ee787] shrink-0 shadow-sm">
+                    <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#7ee787]" />
                   </div>
                   <div>
-                    <h4 className="text-xs sm:text-[13px] font-semibold text-white tracking-tight">
+                    <h4 className="text-[11px] sm:text-xs lg:text-[13px] font-semibold text-white tracking-tight">
                       {feature.title}
                     </h4>
-                    <p className="text-[10px] text-[#8bb5a2] font-light mt-0.5 leading-tight">
+                    <p className="text-[9.5px] sm:text-[10px] text-[#8bb5a2] font-light mt-0.5 leading-tight">
                       {feature.description}
                     </p>
                   </div>
