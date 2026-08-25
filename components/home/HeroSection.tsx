@@ -175,16 +175,16 @@ export function HeroSection() {
               initial={{ scale: 0.95, opacity: 0, y: -16 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative z-10 w-[290px] h-[480px] sm:w-[360px] sm:h-[580px] -mt-10 lg:-mt-16 flex items-center justify-center overflow-visible pointer-events-auto"
+              className="relative z-10 w-[290px] h-[480px] sm:w-[360px] sm:h-[580px] -mt-12 lg:-mt-20 flex items-center justify-center overflow-visible pointer-events-auto"
             >
-              {/* Plant Image Seamless with Background — Zero Card, Zero Border */}
+              {/* Plant Image as Pure Transparent PNG with Soft Drop Shadow */}
               <div className="relative w-full h-full">
                 <Image
-                  src="/images/plants/hero_exact_pothos.jpg"
+                  src="/images/plants/hero_hanging_plant.png"
                   alt="Golden Pothos Hanging from Ceiling"
                   fill
                   priority
-                  className="object-contain object-top drop-shadow-[0_25px_45px_rgba(0,0,0,0.6)] transform hover:scale-[1.03] transition-transform duration-700"
+                  className="object-contain object-top drop-shadow-[0_20px_40px_rgba(0,0,0,0.65)] transform hover:scale-[1.03] transition-transform duration-700"
                 />
               </div>
             </motion.div>
