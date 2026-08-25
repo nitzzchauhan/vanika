@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  typedRoutes: true,
   images: {
     remotePatterns: [
       {
@@ -11,9 +12,6 @@ const nextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
-  },
-  experimental: {
-    typedRoutes: true,
   },
 };
 
