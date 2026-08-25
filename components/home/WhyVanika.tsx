@@ -1,30 +1,74 @@
+import { Truck, ShieldCheck, BookOpen, Leaf, Users, RefreshCw } from "lucide-react";
+
 const perks = [
-  { icon: "🚚", title: "Free Delivery", description: "On all orders above ₹499. Fresh plants delivered to your door." },
-  { icon: "🌱", title: "Healthy Guarantee", description: "All plants are inspected and guaranteed to arrive healthy." },
-  { icon: "📖", title: "Expert Care Guides", description: "Every plant comes with a detailed care guide by our botanists." },
-  { icon: "♻️", title: "Eco Packaging", description: "We use 100% biodegradable and eco-friendly packaging." },
-  { icon: "⭐", title: "Trusted by 10,000+", description: "Join thousands of happy plant parents across India." },
-  { icon: "🔄", title: "Easy Returns", description: "Not happy? Return within 7 days for a full refund." },
+  {
+    icon: Truck,
+    title: "Eco Fast Delivery",
+    description: "Packed with biodegradable insulators and delivered healthy within 48-72 hours.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "30-Day Plant Guarantee",
+    description: "If your botanical friend struggles in its first month, we replace it free of charge.",
+  },
+  {
+    icon: BookOpen,
+    title: "Botanist Care Guides",
+    description: "Custom watering calendars, light diagnostics, and soil health tips for every specimen.",
+  },
+  {
+    icon: Leaf,
+    title: "Sustainably Grown",
+    description: "100% peat-free organic potting mix and eco-conscious nursery cultivation.",
+  },
+  {
+    icon: Users,
+    title: "15,000+ Plant Parents",
+    description: "Join our thriving community of plant lovers, apartment gardeners, and collectors.",
+  },
+  {
+    icon: RefreshCw,
+    title: "Lifetime Plant Doctor",
+    description: "Direct WhatsApp & AI diagnosis support whenever your plant needs a checkup.",
+  },
 ];
 
 export function WhyVanika() {
   return (
-    <section className="bg-brand-50 py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-display text-4xl font-bold mb-3">Why Choose Vanika?</h2>
-          <p className="text-muted-foreground text-lg">We do things differently — and plants love us for it</p>
+    <section className="bg-[#051c14] py-24 text-white border-t border-emerald-500/10">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#4ade80] mb-2 block">
+            The Vanika Difference
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            Why Plant Lovers Choose Vanika
+          </h2>
+          <p className="text-emerald-100/70 text-base font-light">
+            We don't just ship plants; we ensure they thrive in your sanctuary with unmatched care.
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {perks.map((perk) => (
-            <div key={perk.title} className="flex gap-4 p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-3xl shrink-0">{perk.icon}</span>
-              <div>
-                <h3 className="font-semibold text-lg mb-1">{perk.title}</h3>
-                <p className="text-muted-foreground text-sm">{perk.description}</p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {perks.map((perk) => {
+            const Icon = perk.icon;
+            return (
+              <div
+                key={perk.title}
+                className="p-7 rounded-3xl bg-[#092b20]/60 border border-emerald-500/15 hover:border-emerald-400/40 hover:bg-[#0c3629]/80 transition-all duration-300 shadow-md group"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#103a2c] border border-emerald-400/30 flex items-center justify-center mb-5 text-[#4ade80] group-hover:scale-110 transition-transform">
+                  <Icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#4ade80] transition-colors">
+                  {perk.title}
+                </h3>
+                <p className="text-emerald-100/60 text-sm leading-relaxed font-light">
+                  {perk.description}
+                </p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

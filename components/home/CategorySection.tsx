@@ -1,34 +1,103 @@
 import Link from "next/link";
-import type { PlantCategory } from "@/types";
+import { Sparkles, ArrowUpRight } from "lucide-react";
 
-const categories: { label: string; emoji: string; value: PlantCategory; description: string }[] = [
-  { label: "Indoor", emoji: "🪴", value: "indoor", description: "Perfect for home & office" },
-  { label: "Outdoor", emoji: "🌳", value: "outdoor", description: "Garden & balcony plants" },
-  { label: "Succulents", emoji: "🌵", value: "succulent", description: "Low maintenance beauties" },
-  { label: "Rare Plants", emoji: "🌺", value: "rare", description: "Collector's favourites" },
-  { label: "Air Purifying", emoji: "💨", value: "air-purifying", description: "Clean your air naturally" },
-  { label: "Herbs", emoji: "🌿", value: "herbs", description: "Fresh for your kitchen" },
+const categories = [
+  {
+    label: "Indoor Plants",
+    emoji: "🪴",
+    value: "indoor",
+    count: "42 Varieties",
+    description: "Air-purifying foliage for living rooms & desks",
+  },
+  {
+    label: "Hanging Plants",
+    emoji: "🌿",
+    value: "hanging",
+    count: "18 Varieties",
+    description: "Cascading vines for hooks & high shelves",
+  },
+  {
+    label: "Succulents & Cacti",
+    emoji: "🌵",
+    value: "succulent",
+    count: "35 Varieties",
+    description: "Low-maintenance architectural shapes",
+  },
+  {
+    label: "Rare & Exotic",
+    emoji: "🌺",
+    value: "rare",
+    count: "12 Varieties",
+    description: "Variegated & collector botanical treasures",
+  },
+  {
+    label: "Flowering Beauties",
+    emoji: "🌸",
+    value: "flowering",
+    count: "24 Varieties",
+    description: "Vibrant tropical blooms and sweet scents",
+  },
+  {
+    label: "Herb Garden",
+    emoji: "🍃",
+    value: "herbs",
+    count: "16 Varieties",
+    description: "Fresh aromatic greens for home cooking",
+  },
 ];
 
 export function CategorySection() {
   return (
-    <section className="container mx-auto px-4 py-16">
-      <div className="text-center mb-12">
-        <h2 className="font-display text-4xl font-bold mb-3">Shop by Category</h2>
-        <p className="text-muted-foreground text-lg">Find the perfect plant for every corner of your home</p>
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-        {categories.map((cat) => (
+    <section className="bg-[#04160f] py-20 border-t border-emerald-500/10 text-white">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div>
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-[#4ade80] mb-2">
+              <Sparkles className="w-3.5 h-3.5" /> Curated Botanicals
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+              Explore by Category
+            </h2>
+          </div>
           <Link
-            key={cat.value}
-            href={`/shop?category=${cat.value}`}
-            className="group flex flex-col items-center p-6 rounded-2xl border border-border bg-card hover:border-primary hover:shadow-lg transition-all hover:-translate-y-1"
+            href="/shop"
+            className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-400 hover:text-emerald-300 group"
           >
-            <span className="text-4xl mb-3">{cat.emoji}</span>
-            <span className="font-semibold text-sm text-center">{cat.label}</span>
-            <span className="text-xs text-muted-foreground text-center mt-1 hidden sm:block">{cat.description}</span>
+            <span>View All Collections</span>
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
-        ))}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categories.map((cat) => (
+            <Link
+              key={cat.value}
+              href={`/shop?category=${cat.value}` as any}
+              className="group relative overflow-hidden rounded-3xl p-7 bg-gradient-to-b from-[#092b20]/80 to-[#061d15]/90 border border-emerald-500/20 hover:border-emerald-400/50 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(16,185,129,0.15)] hover:-translate-y-1"
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-emerald-500/15 border border-emerald-400/25 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                  {cat.emoji}
+                </div>
+                <span className="text-xs font-medium px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
+                  {cat.count}
+                </span>
+              </div>
+
+              <h3 className="text-xl font-bold text-white group-hover:text-[#4ade80] transition-colors mb-2">
+                {cat.label}
+              </h3>
+              <p className="text-emerald-100/60 text-sm leading-relaxed font-light">
+                {cat.description}
+              </p>
+
+              <div className="mt-6 flex items-center gap-1 text-xs font-semibold text-emerald-400 group-hover:translate-x-1 transition-transform">
+                <span>Browse Category</span>
+                <span>→</span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
