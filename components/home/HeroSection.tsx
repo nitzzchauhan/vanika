@@ -71,22 +71,22 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen w-full bg-[#031811] text-white overflow-hidden flex flex-col justify-between pt-16 pb-6">
+    <section className="relative min-h-screen w-full bg-[#031811] text-white overflow-hidden flex flex-col justify-between pt-4 sm:pt-6 pb-4">
       {/* Background Soft Glows */}
-      <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] bg-[#22c55e]/[0.08] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-[5%] right-[15%] w-[500px] h-[500px] bg-[#22c55e]/[0.08] rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[5%] left-[5%] w-[400px] h-[400px] bg-[#16a34a]/[0.05] rounded-full blur-[130px] pointer-events-none" />
 
       <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl relative z-10 flex-1 flex flex-col justify-between my-auto">
-        {/* Main Hero Content Grid — Harmonious Left & Right Alignment */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center flex-1 pt-6 lg:pt-8 pb-4">
-          {/* Left Column: Raised & Balanced with the Hero Plant */}
-          <div className="lg:col-span-6 flex flex-col justify-center space-y-5 lg:space-y-6 z-20 -mt-6 lg:-mt-10">
+        {/* Main Hero Content Grid — Tightly Aligned to Top */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center flex-1 pt-0 pb-1">
+          {/* Left Column: Raised Up High with the Hero Plant */}
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-4 lg:space-y-5 z-20 -mt-8 lg:-mt-16">
             {/* Pill Badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#08281d] border border-[#1e5843] text-[#7ee787] text-xs font-semibold uppercase tracking-wider shadow-sm self-start"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#08281d] border border-[#1e5843] text-[#7ee787] text-xs font-semibold uppercase tracking-wider shadow-sm self-start"
             >
               <Leaf className="w-3.5 h-3.5 text-[#7ee787]" />
               <span>INDOOR PLANTS</span>
@@ -141,10 +141,10 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right Column: Plant Hanging Directly from the Top Navbar / Ceiling */}
+          {/* Right Column: Plant Hanging with Top Margin */}
           <div className="lg:col-span-6 flex justify-center items-center relative min-h-[440px] lg:min-h-[540px]">
             {/* Concentric Green Geometric Circles Centered Directly Behind the Planter Pot */}
-            <div className="absolute top-[37%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] lg:w-[480px] lg:h-[480px] pointer-events-none flex items-center justify-center">
+            <div className="absolute top-[43%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] lg:w-[480px] lg:h-[480px] pointer-events-none flex items-center justify-center">
               {/* Outer Orbit Circle with 3 Satellite Icon Badges */}
               <div className="w-full h-full rounded-full border border-[#1f5a45]/50 relative animate-[spin_180s_linear_infinite]">
                 {/* Satellite Node 1 (Top Left): Seedling Icon */}
@@ -170,12 +170,12 @@ export function HeroSection() {
               <div className="absolute w-[56%] h-[56%] rounded-full border border-[#1f5a45]/25" />
             </div>
 
-            {/* Seamless Free-Hanging Botanical Visual — Suspended Directly from Top Navbar */}
+            {/* Seamless Free-Hanging Botanical Visual with Added Top Margin */}
             <motion.div
               initial={{ scale: 0.95, opacity: 0, y: -16 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative z-10 w-[300px] h-[480px] sm:w-[380px] sm:h-[580px] lg:w-[420px] lg:h-[640px] -mt-10 lg:-mt-16 flex items-center justify-center overflow-visible pointer-events-auto"
+              className="relative z-10 w-[300px] h-[480px] sm:w-[380px] sm:h-[580px] lg:w-[420px] lg:h-[640px] mt-6 lg:mt-10 flex items-center justify-center overflow-visible pointer-events-auto"
             >
               {/* Plant Image as Pure Transparent PNG with Soft Drop Shadow */}
               <div className="relative w-full h-full">
