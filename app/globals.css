@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 140 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 140 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 20% 10%;
+
+    --primary: 142 70% 35%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 30 40% 90%;
+    --secondary-foreground: 30 30% 20%;
+
+    --muted: 140 10% 95%;
+    --muted-foreground: 140 10% 45%;
+
+    --accent: 142 30% 90%;
+    --accent-foreground: 142 50% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 15% 88%;
+    --input: 140 15% 88%;
+    --ring: 142 70% 35%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 140 20% 7%;
+    --foreground: 140 10% 95%;
+
+    --card: 140 15% 10%;
+    --card-foreground: 140 10% 95%;
+
+    --popover: 140 15% 10%;
+    --popover-foreground: 140 10% 95%;
+
+    --primary: 142 60% 45%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 30 20% 20%;
+    --secondary-foreground: 30 20% 85%;
+
+    --muted: 140 10% 15%;
+    --muted-foreground: 140 10% 60%;
+
+    --accent: 142 20% 18%;
+    --accent-foreground: 142 40% 80%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 15% 20%;
+    --input: 140 15% 20%;
+    --ring: 142 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Vanika custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-400 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-600;
+  }
+}
