@@ -170,15 +170,22 @@ export function HeroSection() {
               <div className="absolute w-[56%] h-[56%] rounded-full border border-[#1f5a45]/25" />
             </div>
 
-            {/* Seamless Free-Hanging Botanical Visual with Added Top Margin */}
+            {/* Seamless Free-Hanging Botanical Visual with Continuous Ceiling Suspension Cords */}
             <motion.div
               initial={{ scale: 0.95, opacity: 0, y: -16 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="relative z-10 w-[300px] h-[480px] sm:w-[380px] sm:h-[580px] lg:w-[420px] lg:h-[640px] mt-6 lg:mt-10 flex items-center justify-center overflow-visible pointer-events-auto"
             >
+              {/* Natural Jute Ropes Extending Straight Up to the Screen/Navbar Ceiling */}
+              <div className="absolute -top-36 left-1/2 -translate-x-1/2 w-10 h-40 pointer-events-none flex justify-center items-end gap-[5px] z-0">
+                <div className="w-[3px] h-full bg-gradient-to-b from-[#8f7457] via-[#b6997b] to-[#c7ad90] rounded-full shadow-[0_0_6px_rgba(0,0,0,0.6)]" />
+                <div className="w-[4px] h-full bg-gradient-to-b from-[#9e8365] via-[#c4a98a] to-[#d8be9f] rounded-full shadow-[0_0_6px_rgba(0,0,0,0.6)]" />
+                <div className="w-[3px] h-full bg-gradient-to-b from-[#8f7457] via-[#b6997b] to-[#c7ad90] rounded-full shadow-[0_0_6px_rgba(0,0,0,0.6)]" />
+              </div>
+
               {/* Plant Image as Pure Transparent PNG with Soft Drop Shadow */}
-              <div className="relative w-full h-full">
+              <div className="relative w-full h-full z-10">
                 <Image
                   src="/images/plants/hero_hanging_plant.png"
                   alt="Golden Pothos Hanging from Ceiling"
