@@ -71,16 +71,16 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen w-full bg-[#031811] text-white overflow-hidden flex flex-col justify-between pt-4 sm:pt-6 pb-4">
-      {/* Background Soft Glows */}
-      <div className="absolute top-[5%] right-[15%] w-[500px] h-[500px] bg-[#22c55e]/[0.08] rounded-full blur-[140px] pointer-events-none" />
+    <section className="relative min-h-[92vh] lg:h-[94vh] max-h-[900px] w-full bg-[#031811] text-white overflow-hidden flex flex-col justify-between pt-16 sm:pt-18 pb-4">
+      {/* Background Soft Ambient Glows */}
+      <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] bg-[#22c55e]/[0.08] rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[5%] left-[5%] w-[400px] h-[400px] bg-[#16a34a]/[0.05] rounded-full blur-[130px] pointer-events-none" />
 
       <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl relative z-10 flex-1 flex flex-col justify-between my-auto">
-        {/* Main Hero Content Grid — Tightly Aligned to Top */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center flex-1 pt-0 pb-1">
-          {/* Left Column: Raised Up High with the Hero Plant */}
-          <div className="lg:col-span-6 flex flex-col justify-center space-y-4 lg:space-y-5 z-20 -mt-8 lg:-mt-16">
+        {/* Main Hero Content Grid — Harmonious Left & Right Alignment */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center flex-1 my-auto py-2">
+          {/* Left Column: Vertically Centered with the Hanging Botanical Visual */}
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-4 lg:space-y-5 z-20 my-auto">
             {/* Pill Badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -99,10 +99,10 @@ export function HeroSection() {
               transition={{ duration: 0.5 }}
               className="space-y-1"
             >
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-[62px] font-normal text-[#f4f8f5] tracking-tight leading-[1.06]">
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-[58px] font-normal text-[#f4f8f5] tracking-tight leading-[1.08]">
                 Bring Nature
               </h1>
-              <h2 className="font-serif text-4xl sm:text-5xl lg:text-[62px] font-normal text-[#6ee787] tracking-tight leading-[1.06]">
+              <h2 className="font-serif text-4xl sm:text-5xl lg:text-[58px] font-normal text-[#6ee787] tracking-tight leading-[1.08]">
                 Into Your Home
               </h2>
             </motion.div>
@@ -112,7 +112,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.55 }}
-              className="text-[#a6c7b9] text-sm sm:text-[15px] leading-relaxed font-light max-w-lg"
+              className="text-[#a6c7b9] text-xs sm:text-sm md:text-[14.5px] leading-relaxed font-light max-w-lg"
             >
               Discover a wide variety of indoor plants, handpicked for your space and delivered fresh to your doorstep.
             </motion.p>
@@ -141,25 +141,25 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right Column: Plant Hanging with Top Margin */}
-          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[440px] lg:min-h-[540px]">
+          {/* Right Column: Plant Hanging Directly from the Top Navbar / Ceiling */}
+          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[440px] lg:min-h-[520px]">
             {/* Concentric Green Geometric Circles Centered Directly Behind the Planter Pot */}
-            <div className="absolute top-[43%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] lg:w-[480px] lg:h-[480px] pointer-events-none flex items-center justify-center">
-              {/* Outer Orbit Circle with 3 Satellite Icon Badges */}
-              <div className="w-full h-full rounded-full border border-[#1f5a45]/50 relative animate-[spin_180s_linear_infinite]">
-                {/* Satellite Node 1 (Top Left): Seedling Icon */}
-                <div className="absolute top-[16%] left-[6%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
-                  <Sprout className="w-4 h-4 text-[#7ee787]" />
+            <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] lg:w-[480px] lg:h-[480px] pointer-events-none flex items-center justify-center">
+              {/* Outer Orbit Circle with Static Fixed Badges (No spinning collision) */}
+              <div className="w-full h-full rounded-full border border-[#1f5a45]/50 relative">
+                {/* Satellite Node 1 (Mid Left): Seedling Icon */}
+                <div className="absolute top-[46%] -left-3.5 w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
+                  <Leaf className="w-4 h-4 text-[#7ee787]" />
                 </div>
 
                 {/* Satellite Node 2 (Top Right): Potted Plant Icon */}
-                <div className="absolute top-[14%] right-[8%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
+                <div className="absolute top-[18%] right-[2%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
                   <Sprout className="w-4 h-4 text-[#7ee787]" />
                 </div>
 
-                {/* Satellite Node 3 (Bottom Left): Botanical Leaf Twig Icon */}
-                <div className="absolute bottom-[10%] left-[28%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
-                  <Leaf className="w-4 h-4 text-[#7ee787]" />
+                {/* Satellite Node 3 (Bottom Right): Botanical Sprout Icon */}
+                <div className="absolute bottom-[16%] right-[2%] w-8 h-8 rounded-full bg-[#052217] border border-[#2b6d55] flex items-center justify-center text-[#7ee787] shadow-[0_0_15px_rgba(126,231,135,0.25)]">
+                  <Sprout className="w-4 h-4 text-[#7ee787]" />
                 </div>
               </div>
 
@@ -170,22 +170,15 @@ export function HeroSection() {
               <div className="absolute w-[56%] h-[56%] rounded-full border border-[#1f5a45]/25" />
             </div>
 
-            {/* Seamless Free-Hanging Botanical Visual with Continuous Ceiling Suspension Cords */}
+            {/* Seamless Free-Hanging Botanical Visual — Photographic Ropes Extend to Top Navbar */}
             <motion.div
               initial={{ scale: 0.95, opacity: 0, y: -16 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative z-10 w-[300px] h-[480px] sm:w-[380px] sm:h-[580px] lg:w-[420px] lg:h-[640px] mt-6 lg:mt-10 flex items-center justify-center overflow-visible pointer-events-auto"
+              className="relative z-10 w-[300px] h-[480px] sm:w-[380px] sm:h-[580px] lg:w-[420px] lg:h-[640px] -mt-10 lg:-mt-16 flex items-center justify-center overflow-visible pointer-events-auto"
             >
-              {/* Natural Jute Ropes Extending Straight Up to the Screen/Navbar Ceiling */}
-              <div className="absolute -top-36 left-1/2 -translate-x-1/2 w-10 h-40 pointer-events-none flex justify-center items-end gap-[5px] z-0">
-                <div className="w-[3px] h-full bg-gradient-to-b from-[#8f7457] via-[#b6997b] to-[#c7ad90] rounded-full shadow-[0_0_6px_rgba(0,0,0,0.6)]" />
-                <div className="w-[4px] h-full bg-gradient-to-b from-[#9e8365] via-[#c4a98a] to-[#d8be9f] rounded-full shadow-[0_0_6px_rgba(0,0,0,0.6)]" />
-                <div className="w-[3px] h-full bg-gradient-to-b from-[#8f7457] via-[#b6997b] to-[#c7ad90] rounded-full shadow-[0_0_6px_rgba(0,0,0,0.6)]" />
-              </div>
-
               {/* Plant Image as Pure Transparent PNG with Soft Drop Shadow */}
-              <div className="relative w-full h-full z-10">
+              <div className="relative w-full h-full">
                 <Image
                   src="/images/plants/hero_hanging_plant.png"
                   alt="Golden Pothos Hanging from Ceiling"
@@ -205,7 +198,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.15 }}
-          className="mt-3 sm:mt-4 rounded-2xl bg-[#06241a]/95 border border-[#1d5743] p-3.5 sm:p-4 backdrop-blur-xl shadow-xl z-20"
+          className="mt-2 sm:mt-3 rounded-2xl bg-[#06241a]/95 border border-[#1d5743] p-3.5 sm:p-4 backdrop-blur-xl shadow-xl z-20"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 divide-y md:divide-y-0 md:divide-x divide-[#1d5743]/50">
             {features.map((feature, idx) => {
