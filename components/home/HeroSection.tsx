@@ -133,7 +133,7 @@ export function HeroSection() {
       <div className="absolute top-[-5%] right-[12%] w-[450px] h-[450px] bg-emerald-500/10 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-5%] w-[380px] h-[380px] bg-emerald-600/10 rounded-full blur-[110px] pointer-events-none" />
 
-      <div className="container mx-auto px-4 lg:px-8 max-w-7xl relative z-10 flex-1 flex flex-col justify-center my-auto">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl relative z-10 flex-1 flex flex-col justify-center my-auto">
         {/* Main Hero Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center pt-2 pb-4">
           {/* Left Column: Headline & Info */}

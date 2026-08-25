@@ -24,7 +24,7 @@ export function Navbar() {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-50 w-full bg-transparent border-none text-white">
-      <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl">
         <div className="flex h-16 items-center justify-between">
           {/* Logo & Tagline */}
           <Link href="/" className="flex items-center gap-2.5 group">

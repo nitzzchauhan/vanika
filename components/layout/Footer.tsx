@@ -4,7 +4,7 @@ import { Leaf, Instagram, Twitter, Facebook, Youtube, MapPin, Phone, Mail } from
 export function Footer() {
   return (
     <footer className="bg-[#030e0a] text-emerald-100/70 border-t border-emerald-500/15">
-      <div className="container mx-auto px-4 lg:px-8 max-w-7xl py-12">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-3">

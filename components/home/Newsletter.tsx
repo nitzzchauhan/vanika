@@ -23,7 +23,7 @@ export function Newsletter() {
 
   return (
     <section className="bg-gradient-to-b from-[#051c14] to-[#03110c] py-16 text-white border-t border-emerald-500/10 relative overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8 max-w-7xl relative z-10">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl relative z-10">
         <div className="max-w-2xl mx-auto text-center space-y-4">
           <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center mx-auto text-[#4ade80]">
             <Mail className="w-4 h-4" />

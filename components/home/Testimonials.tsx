@@ -27,7 +27,7 @@ const reviews = [
 export function Testimonials() {
   return (
     <section className="bg-[#051c14] py-16 text-white border-t border-emerald-500/10">
-      <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl">
         <div className="text-center max-w-xl mx-auto mb-10">
           <span className="text-[11px] font-semibold uppercase tracking-widest text-[#4ade80] mb-1.5 block">
             Customer Love

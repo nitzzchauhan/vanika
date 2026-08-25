@@ -49,7 +49,7 @@ const categories = [
 export function CategorySection() {
   return (
     <section className="bg-[#04160f] py-14 border-t border-emerald-500/10 text-white">
-      <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
           <div>
             <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-widest text-[#4ade80] mb-1.5">

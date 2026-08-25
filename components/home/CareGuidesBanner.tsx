@@ -4,7 +4,7 @@ import { ArrowRight, HeartPulse } from "lucide-react";
 export function CareGuidesBanner() {
   return (
     <section className="bg-[#04160f] py-12 text-white border-t border-emerald-500/10">
-      <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl">
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#0a2f23] via-[#08261c] to-[#051a13] border border-emerald-500/30 p-6 sm:p-10 lg:p-12 shadow-xl">
           {/* Background decoration */}
           <div className="absolute -right-12 -bottom-12 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />

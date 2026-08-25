@@ -110,7 +110,7 @@ export function FeaturedPlants() {
 
   return (
     <section className="bg-gradient-to-b from-[#04160f] to-[#061e15] py-16 text-white border-t border-emerald-500/10">
-      <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-6xl">
         <div className="text-center max-w-xl mx-auto mb-10">
           <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-widest text-[#4ade80] mb-1.5">
             <Sparkles className="w-3 h-3" /> Handpicked Favorites
