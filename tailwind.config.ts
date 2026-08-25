@@ -90,8 +90,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)"],
-        display: ["var(--font-playfair)"],
+        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-playfair)", "Georgia", "serif"],
+        serif: ["var(--font-playfair)", "Georgia", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
